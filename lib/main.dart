@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hoteles SD',      
-      theme: ThemeData.dark(),
+      title: 'Hoteles SD',
+      theme: ThemeData.dark(), //Sindi
       home: homePage(),
     );
   }
