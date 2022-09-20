@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hoteles SD',      
-      theme: ThemeData.dark(),
-      home: homePage(),//Dart sugiere utilizar una constante
+      theme: ThemeData.light(),
+      home: homePage(),
     );
   }
 }
