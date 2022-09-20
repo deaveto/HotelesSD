@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hoteles SD',      
       theme: ThemeData.dark(),
-      home: homePage(),
+      home: homePage(),//Dart sugiere utilizar una constante
     );
   }
 }
