@@ -2,6 +2,8 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 
+import 'consulta.page.dart';
+
 class homePage extends StatefulWidget {
   const homePage({super.key});
 
@@ -47,22 +49,24 @@ class _homePageState extends State<homePage> {
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => ConsultaPage())));
+                },
                 child: Container(
-                  color: Colors.blue,
+                  height: 50,
+                  color: Color.fromARGB(255, 19, 184, 196),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Column(children: [
-                        Text(
-                          "Consultar",
+                      Text("Consultar",
                           style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ]),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
                     ],
                   ),
                 ),
