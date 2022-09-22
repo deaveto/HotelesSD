@@ -61,12 +61,14 @@ class ConsultaPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Ingrese Ciudad: "),
-                Container(
+                Text("Busqueda por ciudad: "),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
                   child: TextField(
-                    decoration: InputDecoration(hintText: 'Ciudad'),
-                  ),
+                      decoration: InputDecoration(hintText: 'Escriba aqui la ciudad'),
+                    ),
                 ),
+                
               ],
             ),
           ),

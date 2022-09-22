@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Hoteles SD',
       theme: ThemeData.light(),
-      home: homePage(),
+      home: HomePage(),
     );
   }
 }
