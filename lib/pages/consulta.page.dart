@@ -50,17 +50,24 @@ class ConsultaPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 4,
+            flex: 1,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text("2")],
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text("Ingrese Ciudad: ")],
             ),
           ),
           Expanded(
-            flex: 4,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text("3")],
+            flex: 1,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Ingrese Ciudad: "),
+                Container(
+                  child: TextField(
+                    decoration: InputDecoration(hintText: 'Ciudad'),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
