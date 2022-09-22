@@ -5,6 +5,66 @@ class ConsultaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage("assets/images/banner.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage("assets/images/logo2.png"),
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage("assets/images/texto.png"),
+                          fit: BoxFit.scaleDown,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [Text(" ")],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 4,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text("2")],
+            ),
+          ),
+          Expanded(
+            flex: 4,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text("3")],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
