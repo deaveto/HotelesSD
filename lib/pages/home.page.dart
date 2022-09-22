@@ -31,6 +31,7 @@ class _homePageState extends State<homePage> {
           ),
         ),
         child: Container(
+          //Ingresar el logo
           height: 10,
           decoration: BoxDecoration(
             image: DecorationImage(
