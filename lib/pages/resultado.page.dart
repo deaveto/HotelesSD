@@ -1,87 +1,47 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:newnoticias/models/hotel.model.dart';
+import 'package:newnoticias/providers/hoteles.provider.dart';
+import 'package:newnoticias/widgets/card.widget.dart';
 
-class ResultadoPage extends StatelessWidget {
-  ResultadoPage({
-    super.key,
-    required this.ciudad,
-    required this.cantidad,
-    required this.tiempo,
-  });
-  String ciudad;
-  String cantidad;
-  String tiempo;
+class ResultadoPage extends StatefulWidget {
+  const ResultadoPage({super.key});
+
+  @override
+  State<ResultadoPage> createState() => _ResultadoPageState();
+}
+
+class _ResultadoPageState extends State<ResultadoPage> {
+  final hotelProvider = HotelProvider();
+  late Future<List<HotelModel>> hoteles;
+
+  @override
+  void initState() {
+    hoteles = hotelProvider.obtenerHoteles();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(" ")),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage("assets/images/banner.png"),
-                  fit: BoxFit.fill,
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage("assets/images/logo2.png"),
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage("assets/images/texto.png"),
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(
-                      children: [Text(" ")],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 4,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "1",
-                  style: TextStyle(color: Color.fromARGB(255, 19, 184, 196)),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 4,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "2",
-                  style: TextStyle(color: Color.fromARGB(255, 19, 184, 196)),
-                )
-              ],
-            ),
-          ),
-        ],
+      appBar: AppBar(
+        title: Text("Resultados de los hoteles"),
+      ),
+      body: FutureBuilder(
+        future: hoteles,
+        builder: ((context, snapshot) {
+          List<Widget> lista = [];
+
+          if (snapshot.hasData) {  //corregir error de visualización
+            snapshot.data
+                ?.forEach((element) => lista.add(CardWidget(hotel: element)));
+            return ListView(
+              children: lista,
+            );
+          } else {
+            return Center(child: CircularProgressIndicator());
+          }
+        }),
       ),
     );
   }
