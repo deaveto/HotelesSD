@@ -6,6 +6,7 @@ class ConsultaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //
     String ciudadA = "bogota";
     String cantidadA = "";
     String tiempoA = "";
