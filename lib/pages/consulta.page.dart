@@ -147,9 +147,9 @@ class ConsultaPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: ((context) => ResultadoPage(
-                            ciudad: cantidadA,
-                            cantidad: cantidadA,
-                            tiempo: tiempoA,
+                            // ciudad: cantidadA,
+                            // cantidad: cantidadA,
+                            // tiempo: tiempoA,
                           ))));
             },
             child: Container(
