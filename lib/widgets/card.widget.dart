@@ -35,10 +35,11 @@ class CardWidget extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Text(
+                            "N° de estrellas:  " + hotel.starRating.toString()),
                         Text("Dirección:  " + hotel.streetAddress),
                         Text("Precio:  " + hotel.current + " Noche"),
-                        Text("Habitaciones restantes:  " +
-                            hotel.roomsLeft.toString()),
+                        Text("Habitaciones restantes:  " + hotel.roomsLeft),
                         Text("Numero de contacto:  " +
                             hotel.supplierHotelId.toString()),
                       ],

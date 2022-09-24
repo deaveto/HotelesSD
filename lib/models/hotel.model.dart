@@ -1,6 +1,6 @@
 class HotelModel {
   String name;
-  //int starRating;
+  double? starRating;
   String thumbnaiUrl;
   String streetAddress;
   String current;
@@ -9,7 +9,7 @@ class HotelModel {
 
   HotelModel(
       {required this.name,
-      //required this.starRating,
+      this.starRating,
       required this.thumbnaiUrl,
       required this.streetAddress,
       required this.current,
@@ -18,11 +18,11 @@ class HotelModel {
 
   factory HotelModel.fromJson(Map<String, dynamic> json) => HotelModel(
         name: json["name"] ?? '',
-        //starRating: json["starRating"] ?? '',
+        starRating: json["starRating"] ?? '1.0',
         thumbnaiUrl: json["optimizedThumbUrls"]["srpDesktop"] ?? '',
         streetAddress: json["address"]["streetAddress"] ?? '',
         current: json["ratePlan"]["price"]["current"] ?? '',
-        roomsLeft: json["roomsLeft"] ?? '',
+        roomsLeft: json["roomsLeft"] ?? '0',
         supplierHotelId: json["supplierHotelId"] ?? '',
       );
 }
