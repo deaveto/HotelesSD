@@ -4,7 +4,8 @@ import '../models/hotel.model.dart';
 import 'package:http/http.dart' as http;
 
 class HotelProvider {
-  Future<List<HotelModel>> obtenerHoteles() async {
+  Future<List<HotelModel>> obtenerHoteles(
+      String checkIn, String checkOut) async {
     List<HotelModel> hoteles = [];
     var client = http.Client();
 
@@ -13,8 +14,8 @@ class HotelProvider {
         'destinationId': '1506246',
         'pageNumber': '1',
         'pageSize': '6',
-        'checkIn': '2022-09-24',
-        'checkOut': '2022-09-26',
+        'checkIn': checkIn,
+        'checkOut': checkOut,
         'adults1': '2',
         'sortOrder': 'PRICE',
         'locale': 'en_US',
@@ -32,7 +33,7 @@ class HotelProvider {
       var decodeResponse =
           jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
 
-      //print(decodeResponse["data"]["body"]["searchResults"]["results"]);
+      print(decodeResponse["data"]["body"]["searchResults"]["results"]);
       decodeResponse["data"]["body"]["searchResults"]["results"]
           .forEach((item) => hoteles.add(HotelModel.fromJson(item)));
 
