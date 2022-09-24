@@ -12,13 +12,12 @@ class CardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 300,
+        height: 200,
         child: Column(
           children: [
             Expanded(
               flex: 1,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(hotel.name,
                       style: TextStyle(
@@ -29,13 +28,13 @@ class CardWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 3,
+              flex: 4,
               child: Row(
                 children: [
                   Expanded(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Estrellas:  " + hotel.starRating.toString()),
                         Text("Dirección:  " + hotel.streetAddress),
                         Text("Precio:  " + hotel.current + " Noche"),
                         Text("Habitaciones restantes:  " +
@@ -48,19 +47,14 @@ class CardWidget extends StatelessWidget {
                   Expanded(
                     child: Column(
                       children: [
-                        Image.network(hotel.thumbnaiUrl.split('?')[0],
-                            width: 200),
+                        Image.network(
+                          hotel.thumbnaiUrl.split('?')[0],
+                          width: 200,
+                          height: 150,
+                        ),
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: [
-                  Text(" "),
                 ],
               ),
             ),
