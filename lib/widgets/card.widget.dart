@@ -22,7 +22,7 @@ class CardWidget extends StatelessWidget {
                   Text(hotel.name,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black,
                       )),
                 ],
               ),
@@ -63,7 +63,8 @@ class CardWidget extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           //BORDE DEL CUADRO REDONDE
-          color: Color.fromARGB(255, 98, 203, 230),
+          color: Color.fromARGB(255, 252, 252, 252),
+          border: Border.all(width: 1),
           borderRadius: BorderRadius.circular(10.0),
         ),
       ),
