@@ -23,7 +23,7 @@ class ConsultaPage extends StatelessWidget {
                 ),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
@@ -55,102 +55,95 @@ class ConsultaPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Ingrese Ciudad: ",
+                  "  Ingrese Ciudad:     ",
                   style: TextStyle(color: Color.fromARGB(255, 19, 184, 196)),
                 ),
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: TextField(
-                    onChanged: (texto) {
-                      ciudadA = texto;
-                    },
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Ciudad',
-                    ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 26,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                Text("                                        "),
               ],
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Cantidad de Huéspedes: ",
+                  "  Fecha de entrada: ",
                   style: TextStyle(color: Color.fromARGB(255, 19, 184, 196)),
-                )
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Cantidad',
-                    ),
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 26,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'YYYY-MM-DD',
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                Text("                                        "),
               ],
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Tiempo de alojamiento: ",
+                  "  Fecha de salidad:  ",
                   style: TextStyle(color: Color.fromARGB(255, 19, 184, 196)),
-                )
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Dias',
-                    ),
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 26,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'YYYY-MM-DD',
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                Text("                                        "),
               ],
             ),
           ),
           GestureDetector(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: ((context) => ResultadoPage(
-                            // ciudad: cantidadA,
-                            // cantidad: cantidadA,
-                            // tiempo: tiempoA,
-                          ))));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => ResultadoPage())));
             },
             child: Container(
               height: 50,
