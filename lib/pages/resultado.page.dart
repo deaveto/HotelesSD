@@ -4,7 +4,6 @@ import 'package:newnoticias/models/hotel.model.dart';
 import 'package:newnoticias/providers/hoteles.provider.dart';
 import 'package:newnoticias/providers/locations.provider.dart';
 import 'package:newnoticias/widgets/card.widget.dart';
-
 import '../models/location.model.dart';
 
 class ResultadoPage extends StatefulWidget {
@@ -18,12 +17,11 @@ class _ResultadoPageState extends State<ResultadoPage> {
   final hotelProvider = HotelProvider();
   //final LocationProvider =LocationProvider();
   late Future<List<HotelModel>> hoteles;
-  late Future<List<LocationModel>> locaciones;
+  //late Future<List<LocationModel>> locaciones;
 
   @override
   void initState() {
     hoteles = hotelProvider.obtenerHoteles();
-    //locaciones=LocationProvider.obtenerLocaciones();
     super.initState();
   }
 
@@ -31,18 +29,18 @@ class _ResultadoPageState extends State<ResultadoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Resultados de los hoteles"),
+        title: Text("Resultados de los hoteles:  "),
       ),
       body: FutureBuilder(
         future: hoteles,
         builder: ((context, snapshot) {
           List<Widget> lista = [];
 
-          if (snapshot.hasData) {  //corregir error de visualización
+          if (snapshot.hasData) {
             snapshot.data
                 ?.forEach((element) => lista.add(CardWidget(hotel: element)));
             return ListView(
-              children: lista, 
+              children: lista,
             );
           } else {
             return Center(child: CircularProgressIndicator());

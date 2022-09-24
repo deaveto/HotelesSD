@@ -16,10 +16,25 @@ class CardWidget extends StatelessWidget {
         height: 400,
         child: Column(
           children: [
-            Text(hotel.id),
-            Text(hotel.name),
-            Text(hotel.thumbnailUrl),
-            Text(hotel.starRating),
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(hotel.name),
+                ],
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Estrellas: " + hotel.starRating.toString()),
+                  Image.network(hotel.thumbnaiUrl.split('?')[0], width: 300),
+                ],
+              ),
+            ),
           ],
         ),
       ),

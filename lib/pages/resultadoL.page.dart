@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:newnoticias/providers/locations.provider.dart';
 import 'package:newnoticias/widgets/card.widget.dart';
 import '../models/location.model.dart';
@@ -46,3 +46,4 @@ class _ResultadoPageState extends State<ResultadoPage> {
     );
   }
 }
+*/

@@ -38,6 +38,9 @@ class HotelProvider {
 
       print(hoteles);
       return hoteles;
+    } catch (e) {
+      print(e);
+      return hoteles;
     } finally {
       client.close();
     }
