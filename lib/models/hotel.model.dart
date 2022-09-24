@@ -1,20 +1,19 @@
 class HotelModel {
-  String id;
+  int id;
   String name;
-  String thumbnailUrl;
-  String starRating;
+  int starRating;
+  String thumbnaiUrl;
 
-  HotelModel({
-    required this.id,
-    required this.name,
-    required this.thumbnailUrl,
-    required this.starRating,
-  });
+  HotelModel(
+      {required this.id,
+      required this.name,
+      required this.starRating,
+      required this.thumbnaiUrl});
 
   factory HotelModel.fromJson(Map<String, dynamic> json) => HotelModel(
         id: json["id"] ?? '',
         name: json["name"] ?? '',
-        thumbnailUrl: json["thumbnailUrl"] ?? '',
         starRating: json["starRating"] ?? '',
+        thumbnaiUrl: json["optimizedThumbUrls"]["srpDesktop"] ?? '',
       );
 }
