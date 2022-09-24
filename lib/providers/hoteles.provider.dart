@@ -32,8 +32,10 @@ class HotelProvider {
       var decodeResponse =
           jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
 
-      decodeResponse['data']
+      print(decodeResponse["data"]["body"]["searchResults"]["results"]);
+      decodeResponse["data"]["body"]["searchResults"]["results"]
           .forEach((item) => hoteles.add(HotelModel.fromJson(item)));
+
       print(hoteles);
       return hoteles;
     } finally {
