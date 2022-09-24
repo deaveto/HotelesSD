@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'package:flutter/material.dart';
 import 'consulta.page.dart';
 
@@ -10,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String  hotelFondo="assets/images/hotel.jpg" ;
+  String  logo="assets/images/logo.png" ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
                 Colors.black.withOpacity(0.4),
                 BlendMode
                     .dstATop), //Establecer transparencia/opacidad de la imagen
-            image: NetworkImage("assets/images/hotel.jpg"),
+            image: NetworkImage(hotelFondo),
           ),
         ),
         child: Container(
@@ -33,11 +34,12 @@ class _HomePageState extends State<HomePage> {
           height: 10,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage("assets/images/logo.png"),
+              image: NetworkImage(logo),
             ),
           ),
           child: Column(
             children: [
+              
               Expanded(
                 flex: 9,
                 child: Container(
@@ -46,9 +48,11 @@ class _HomePageState extends State<HomePage> {
                       Text(""),
                     ],
                   ),
-                ),
+                ), 
               ),
+              
               GestureDetector(
+
                 onTap: () {
                   Navigator.push(
                       context,
@@ -56,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                           builder: ((context) => ConsultaPage())));
                 },
                 child: Container(
+                  
                   height: 50,
                   color: Color.fromARGB(255, 19, 184, 196),
                   child: Row(
