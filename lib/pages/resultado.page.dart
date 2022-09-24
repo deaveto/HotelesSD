@@ -2,23 +2,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newnoticias/models/hotel.model.dart';
 import 'package:newnoticias/providers/hoteles.provider.dart';
+import 'package:newnoticias/providers/locations.provider.dart';
 import 'package:newnoticias/widgets/card.widget.dart';
 import '../models/location.model.dart';
 
 class ResultadoPage extends StatefulWidget {
-  const ResultadoPage({super.key});
+  ResultadoPage({
+    super.key,
+    required this.fechaEntrada,
+    required this.fechaSalida,
+  });
+
+  String fechaEntrada;
+  String fechaSalida;
 
   @override
-  State<ResultadoPage> createState() => _ResultadoPageState();
+  State<ResultadoPage> createState() => _ResultadoPageState(
+      fechaEntrada: this.fechaEntrada, fechaSalida: this.fechaSalida);
 }
 
 class _ResultadoPageState extends State<ResultadoPage> {
+  _ResultadoPageState({required this.fechaEntrada, required this.fechaSalida});
+  String fechaEntrada;
+  String fechaSalida;
   final hotelProvider = HotelProvider();
+  //final LocationProvider =LocationProvider();
   late Future<List<HotelModel>> hoteles;
+  //late Future<List<LocationModel>> locaciones;
 
   @override
   void initState() {
-    hoteles = hotelProvider.obtenerHoteles();
+    hoteles = hotelProvider.obtenerHoteles(fechaEntrada, fechaSalida);
     super.initState();
   }
 
