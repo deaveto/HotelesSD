@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newnoticias/models/hotel.model.dart';
 import 'package:newnoticias/providers/hoteles.provider.dart';
-import 'package:newnoticias/providers/locations.provider.dart';
 import 'package:newnoticias/widgets/card.widget.dart';
 import '../models/location.model.dart';
 
@@ -15,9 +14,7 @@ class ResultadoPage extends StatefulWidget {
 
 class _ResultadoPageState extends State<ResultadoPage> {
   final hotelProvider = HotelProvider();
-  //final LocationProvider =LocationProvider();
   late Future<List<HotelModel>> hoteles;
-  //late Future<List<LocationModel>> locaciones;
 
   @override
   void initState() {

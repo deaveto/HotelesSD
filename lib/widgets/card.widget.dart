@@ -12,30 +12,65 @@ class CardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        color: Colors.lightBlue,
-        height: 400,
+        //color: Colors.lightBlue,
+        height: 300,
         child: Column(
           children: [
             Expanded(
               flex: 1,
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(hotel.name),
+                  Text(hotel.name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      )),
                 ],
               ),
             ),
             Expanded(
-              flex: 2,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              flex: 3,
+              child: Row(
                 children: [
-                  Text("Estrellas: " + hotel.starRating.toString()),
-                  Image.network(hotel.thumbnaiUrl.split('?')[0], width: 300),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text("Estrellas:  " + hotel.starRating.toString()),
+                        Text("Dirección:  " + hotel.streetAddress),
+                        Text("Precio:  " + hotel.current + " Noche"),
+                        Text("Habitaciones restantes:  " +
+                            hotel.roomsLeft.toString()),
+                        Text("Numero de contacto:  " +
+                            hotel.supplierHotelId.toString()),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Image.network(hotel.thumbnaiUrl.split('?')[0],
+                            width: 200),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  Text(" "),
                 ],
               ),
             ),
           ],
+        ),
+        decoration: BoxDecoration(
+          //BORDE DEL CUADRO REDONDE
+          color: Color.fromARGB(255, 98, 203, 230),
+          borderRadius: BorderRadius.circular(10.0),
         ),
       ),
     );

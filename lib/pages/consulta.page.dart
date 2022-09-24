@@ -60,34 +60,6 @@ class ConsultaPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "  Ingrese Ciudad:     ",
-                  style: TextStyle(color: Color.fromARGB(255, 19, 184, 196)),
-                ),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 26,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Text("                                        "),
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
                   "  Fecha de entrada: ",
                   style: TextStyle(color: Color.fromARGB(255, 19, 184, 196)),
                 ),
